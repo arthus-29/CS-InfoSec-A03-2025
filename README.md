@@ -61,13 +61,13 @@ generated automatically.
 
 ## Vulnerability Modules
 
-| Module | Location | Intentional Weakness | Flag Hint |
-| ------ | -------- | -------------------- | --------- |
-| SQLi (Leaderboard) | `/sqli` | Unsafely concatenated leaderboard query | Use `UNION SELECT` to exfiltrate the `flags` table |
-| SQLi (Contracts)   | `/sqli/contracts` | Stacked UNION on executive contract search | Pivot into `flags` for the hidden contract flag |
-| SQLi (Blind)       | `/sqli/blind` | Vault console returning only granted/denied | Flip the equality check with `' OR 1=1--` to expose the flag |
-| XSS    | `/xss`   | Stored messages render with `|safe` | Execute JS to read `window.challengeFlags.xss` |
-| CSRF   | `/csrf`  | No CSRF token, accepts cross-origin POST | Use `static/attacks/csrf_trap.html` as a template |
+| Module | Location | Intentional Weakness |
+| ------ | -------- | -------------------- |
+| SQLi (Leaderboard) | `/sqli` | Unsafely concatenated leaderboard query |
+| SQLi (Contracts)   | `/sqli/contracts` | Stacked UNION on executive contract search |
+| SQLi (Blind)       | `/sqli/blind` | Vault console returning only granted/denied |
+| XSS    | `/xss`   | Stored messages render with `|safe` | 
+| CSRF   | `/csrf`  | No CSRF token, accepts cross-origin POST |
 
 ### Scoring System
 
